@@ -1,9 +1,25 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 62.5%;
+  }
+
   body {
-    margin: 1rem;
-    padding: 1rem;
-    border: 1px solid #000;
+    font-size: 1.6rem;
+  }
+
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+    font-size: inherit;
   }
 `
