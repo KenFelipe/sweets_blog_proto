@@ -11,13 +11,14 @@ export default {
   },
 } as Meta
 
-const Template: Story<SweetsCardProps> = args => <SweetsCard {...args} />
+const Template: Story<SweetsCardProps> = args => (
+  <SweetsCard {...args} />
+)
 
 export const Primary = Template.bind({})
 Primary.storyName = 'Primary'
-
 Primary.args = {
   name: 'Tiramisu',
   price: 58,
-  imageUrl: 'https://picsum.photos/320',
+  imageUrl: 'https://picsum.photos/320', // random image generator api
 }

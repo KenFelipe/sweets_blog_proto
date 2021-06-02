@@ -2,40 +2,21 @@
 import styled from 'styled-components'
 import { SweetsCardProps } from './SweetsCard'
 
-export const Wrapper = styled.div<Pick<SweetsCardProps, 'imageUrl'>>`
-  position: relative;
+type Props = Pick<SweetsCardProps, 'imageUrl'>
 
-  min-width: 160px;
-  max-width: 320px;
-
+export const Content = styled.div<Props>`
   background-image: url(${({ imageUrl }) => imageUrl});
 
-  ::after {
-    content: '';
-    display: block;
-    padding-top: 100%;
-  }
-`
-
-export const ContentWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-`
-
-export const Content = styled.div`
   position: relative;
   height: 100%;
 
   color: #fff;
 
   display: flex;
-  flex-flow: column-reverse wrap;
+  flex-flow: column wrap;
   justify-content: space-between;
 
-  // Name section Overlay
+  /* Name section Overlay */
   ::after {
     content: '';
     display: block;
@@ -52,9 +33,9 @@ export const Content = styled.div`
   }
 `
 
-const arrowSize = 16
-
-export const NameSection = styled.div`
+export const NameSection = styled.div.attrs({
+  arrowSize: 16,
+})`
   display: flex;
   z-index: 2;
 
@@ -65,9 +46,9 @@ export const NameSection = styled.div`
     border-top: 1px solid #e2e2e2;
     border-right: 1px solid #e2e2e2;
 
-    width: ${arrowSize}px;
-    height: ${arrowSize}px;
-    margin-top: -${arrowSize / 2}px;
+    width: ${({ arrowSize }) => `${arrowSize}px`};
+    height: ${({ arrowSize }) => `${arrowSize}px`};
+    margin-top: ${({ arrowSize }) => `-${arrowSize / 2}px`};
 
     position: relative;
     top: 50%;
