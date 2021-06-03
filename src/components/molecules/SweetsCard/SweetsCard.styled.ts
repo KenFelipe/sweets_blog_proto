@@ -1,11 +1,7 @@
-// eslint-ignore
 import styled from 'styled-components'
-import { SweetsCardProps } from './SweetsCard'
 
-type Props = Pick<SweetsCardProps, 'imageUrl'>
-
-export const Content = styled.div<Props>`
-  background-image: url(${({ imageUrl }) => imageUrl});
+export const Content = styled.div`
+  background-size: contain;
 
   position: relative;
   height: 100%;
