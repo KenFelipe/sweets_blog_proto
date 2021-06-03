@@ -1,18 +1,46 @@
+import _ from 'lodash'
+
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 
-export const mobileFirstViewportParams = {
-  layout: 'fullscreen',
-  viewport: {
-    viewports: {
-      ...MINIMAL_VIEWPORTS,
-      mobile1: {
-        ...MINIMAL_VIEWPORTS.mobile1,
-        styles: {
-          ...MINIMAL_VIEWPORTS.mobile1.styles,
-          border: '0',
+const vpSetDefault = { ...MINIMAL_VIEWPORTS }
+
+const customMobileLabel = {
+  mobile1: 'small',
+  mobile2: 'large',
+  tablet: 'tablet',
+}
+
+const vpCustomSetToMerged = {
+  styles: {
+    border: '0',
+  },
+}
+
+const vpSetMerged = _.mapValues(vpSetDefault, obj =>
+  _.merge(obj, vpCustomSetToMerged),
+)
+
+const customVpSet = Object.keys(vpSetMerged).reduce(
+  (accumulator, key) => ({
+    ...accumulator,
+    [key]: {
+      layout: 'fullscreen',
+      viewport: {
+        defaultViewport: key,
+        viewports: {
+          ...vpSetMerged,
         },
       },
     },
-    defaultViewport: 'mobile1',
-  },
+  }),
+  {},
+)
+
+const customVpSetWithCustomLabel = _.mapKeys(
+  customVpSet,
+  (_, key) => customMobileLabel[key],
+)
+
+export const mobileFirstViewportParams = {
+  ...customVpSetWithCustomLabel,
 }

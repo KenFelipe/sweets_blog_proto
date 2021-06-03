@@ -7,7 +7,7 @@ export default {
   title: 'Molecules/SweetsCard',
   component: SweetsCard,
   parameters: {
-    ...mobileFirstViewportParams,
+    ...mobileFirstViewportParams.small,
   },
 } as Meta
 
