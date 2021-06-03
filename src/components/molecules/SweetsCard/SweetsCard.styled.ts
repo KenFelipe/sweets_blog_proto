@@ -13,32 +13,51 @@ export const Content = styled.div<Props>`
   color: #fff;
 
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: space-between;
-
-  /* Name section Overlay */
-  ::after {
-    content: '';
-    display: block;
-
-    position: absolute;
-    bottom: 0;
-
-    width: 100%;
-    height: 40px;
-
-    background-color: #000;
-    opacity: 0.3;
-    z-index: 1;
-  }
 `
 
-export const NameSection = styled.div.attrs({
+export const Price = styled.span`
+  padding: 5px 8px;
+  font-style: italic;
+`
+
+export const Name = styled.span`
+  /* flexitems min-width set to default its flexcontent width,
+    so need to override to text-overflow works properly */
+  min-width: 0;
+  max-width: 100%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-size: 3rem;
+  letter-spacing: 0.12rem;
+
+  padding: 3px 26px 3px 10px;
+
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+`
+
+export const NameLayer = styled.div.attrs({
   arrowSize: 16,
 })`
   display: flex;
-  z-index: 2;
+  flex-direction: row-reverse;
 
+  width: 100%;
+  height: 40px;
+
+  background-color: #000;
+  opacity: 0.3;
+
+  position: absolute;
+  bottom: 0;
+
+  /* Arrow */
   ::after {
     content: '';
     display: block;
@@ -56,17 +75,4 @@ export const NameSection = styled.div.attrs({
 
     transform: rotate(45deg);
   }
-`
-
-export const Name = styled.p`
-  font-size: 3rem;
-  flex-grow: 1;
-
-  padding: 3px 10px;
-  letter-spacing: 0.12rem;
-`
-
-export const Price = styled.p`
-  padding: 5px 8px;
-  font-style: italic;
 `

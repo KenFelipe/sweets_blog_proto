@@ -23,19 +23,15 @@ export const SweetsCard = ({
   const SweetsCardContent = (
     <Styled.Content imageUrl={imageUrl}>
       <Styled.Price>{priceBRLNotation}</Styled.Price>
-      <Styled.NameSection>
-        <Styled.Name>{name}</Styled.Name>
-      </Styled.NameSection>
+
+      <Styled.Name>{name}</Styled.Name>
+      <Styled.NameLayer />
     </Styled.Content>
   )
 
   if (isLink) {
     return (
-      <Square //
-        minSide="160px"
-        maxSide="320px"
-        background="#eee"
-      >
+      <Square background="#eee">
         <a href={href} rel="noreferrer noopener">
           {SweetsCardContent}
         </a>

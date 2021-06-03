@@ -1,8 +1,8 @@
 import * as Styled from './Square.styled'
 
 export type SquareProps = {
-  minSide: string
-  maxSide: string
+  minSide?: string
+  maxSide?: string
   background?: string
   children: React.ReactNode
 }

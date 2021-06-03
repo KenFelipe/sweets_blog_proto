@@ -9,8 +9,8 @@ type CubicWrapperProps = Pick<
 export const Wrapper = styled.div<CubicWrapperProps>`
   position: relative;
 
-  min-width: ${({ minSide }) => minSide};
-  max-width: ${({ maxSide }) => maxSide};
+  min-width: ${({ minSide }) => minSide || '0px'};
+  max-width: ${({ maxSide }) => maxSide || 'none'};
 
   background: ${({ background }) => background || 'transparent'};
 
