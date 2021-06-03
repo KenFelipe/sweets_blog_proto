@@ -1,11 +1,11 @@
 const sweetsList = [
   'Tiramisu',
   'Brownies',
-  'Macarons',
-  'Mousse',
-  'Doughnuts',
-  'Churros',
-  'Cherry Pie',
+  // 'Macarons',
+  // 'Mousse',
+  // 'Doughnuts',
+  // 'Churros',
+  // 'Cherry Pie',
   // 'Pudding',
   // 'Trifle',
   // 'Gelato',
@@ -21,26 +21,32 @@ const sweetsList = [
   // 'Milkshake',
 ]
 
-export const sweetsListMockData = sweetsList.map(
-  (sweetsName, i) => {
-    const randomNumber = (min, max, dec = 0) =>
-      parseFloat(
-        (Math.random() * (max - min) + min).toFixed(dec),
-      )
+export const sweetsListMockData = async () => {
+  const keywords = [
+    'sweets', //
+    'desserts', //
+    'cake', //
+  ].join(',')
 
-    const keywords = [
-      'cake', //
-      'sweets',
-      'desserts',
-    ].join(',')
+  const imageUrlsPromise = sweetsList.map((_, i) =>
+    fetch(
+      `https://source.unsplash.com/320x320/?sig=${i}&${keywords}`,
+    ),
+  )
 
-    const [minPrice, maxPrice] = [4, 27]
+  const imageUrls = await Promise.all(
+    imageUrlsPromise,
+  ).then(dataFetched => dataFetched.map(data => data.url))
 
-    return {
-      name: sweetsName,
-      price: randomNumber(minPrice, maxPrice, 1),
-      href: `https://source.unsplash.com/320x320/?${keywords}`,
-      imageUrl: `https://source.unsplash.com/320x320/?sig=${i}&${keywords}`,
-    }
-  },
-)
+  const [minPrice, maxPrice] = [4, 27]
+
+  const randomPrice = (min = minPrice, max = maxPrice) =>
+    parseFloat((Math.random() * (max - min) + min).toFixed(1))
+
+  return sweetsList.map((sweetsName, i) => ({
+    name: sweetsName,
+    price: randomPrice(),
+    imageUrl: imageUrls[i],
+    href: imageUrls[i],
+  }))
+}
