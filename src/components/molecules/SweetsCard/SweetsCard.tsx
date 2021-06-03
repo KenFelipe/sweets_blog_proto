@@ -21,7 +21,6 @@ export const SweetsCard = ({
   const priceBRLNotation = toBRLNotation(price)
 
   const SweetsCardContent = (
-    // <Styled.Content imageUrl={imageUrl}>
     <Styled.Content
       style={{ backgroundImage: `url('${imageUrl}')` }}
     >

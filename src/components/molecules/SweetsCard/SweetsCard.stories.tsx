@@ -20,7 +20,7 @@ PureCard.storyName = 'No Link'
 PureCard.args = {
   name: 'Tiramisu',
   price: 58,
-  imageUrl: 'https://picsum.photos/320', // random image generator api
+  imageUrl: 'https://source.unsplash.com/320x320/?desserts', // random image generator api
 }
 
 export const AsLink = Template.bind({})
@@ -28,7 +28,7 @@ AsLink.storyName = 'With Link'
 AsLink.args = {
   name: 'Pudding',
   price: 12.89,
-  imageUrl: 'https://picsum.photos/320?random=1', // random image generator api
+  imageUrl: 'https://source.unsplash.com/320x320/?sweets', // random image generator api
   isLink: true,
-  href: 'https://picsum.photos/320',
+  href: 'https://source.unsplash.com/320x320/?cake',
 }
