@@ -2,14 +2,19 @@ import { Story, Meta } from '@storybook/react'
 import { mobileFirstViewportParams } from '@/utils/storybook/mobileFirstViewport'
 
 import { SweetsList, SweetsListProps } from './SweetsList'
-import { sweetsListMockData } from './SweetsList.mock'
+import { getSweetsListMockData } from './SweetsList.mock'
+
+// max: 20
+const mockSweetsListLength = 3
 
 export default {
   title: 'Organisms/SweetsList',
   component: SweetsList,
   loaders: [
     async () => ({
-      sweetsListData: await sweetsListMockData(),
+      sweetsListData: await getSweetsListMockData(
+        mockSweetsListLength,
+      ),
     }),
   ],
 } as Meta
