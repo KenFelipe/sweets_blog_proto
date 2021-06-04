@@ -21,11 +21,11 @@ export const SweetsCard = ({
   const priceBRLNotation = toBRLNotation(price)
 
   const SweetsCardContent = (
-    <Styled.Content
-      style={{ backgroundImage: `url('${imageUrl}')` }}
-    >
+    <Styled.Content>
+      <Styled.Background
+        style={{ backgroundImage: `url('${imageUrl}')` }}
+      />
       <Styled.Price>{priceBRLNotation}</Styled.Price>
-
       <Styled.Name>{name}</Styled.Name>
       <Styled.NameLayer />
     </Styled.Content>
