@@ -24,11 +24,17 @@ const Template: Story<SweetsListProps> = (
   { loaded: { sweetsListData } },
 ) => <SweetsList {...args} sweetsListData={sweetsListData} />
 
-export const MobileView = Template.bind({})
-MobileView.storyName = 'Mobile View'
-MobileView.parameters = {
-  ...mobileFirstViewportParams.large,
-}
+export const MobileSmall = Template.bind({})
+MobileSmall.storyName = 'Mobile(small)'
+MobileSmall.parameters = { ...mobileFirstViewportParams.small }
+
+export const MobileLarge = Template.bind({})
+MobileLarge.storyName = 'Mobile(large)'
+MobileLarge.parameters = { ...mobileFirstViewportParams.large }
+
+export const Tablet = Template.bind({})
+Tablet.storyName = 'Tablet'
+Tablet.parameters = { ...mobileFirstViewportParams.tablet }
 
 export const LaptopView = Template.bind({})
 LaptopView.storyName = 'Laptop/Desktop View'
