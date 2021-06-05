@@ -11,6 +11,7 @@ const activeColor = '#323232'
 
 export const Tag = styled.a<Props>`
   user-select: none;
+  white-space: nowrap;
 
   display: inline-block;
   cursor: pointer;
