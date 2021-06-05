@@ -10,8 +10,11 @@ const bezier = 'cubic-bezier(.27,.8,.35, 1)'
 const activeColor = '#323232'
 
 export const Tag = styled.a<Props>`
+  user-select: none;
+
   display: inline-block;
   cursor: pointer;
+
   position: relative;
   padding: 2px 4px;
 
@@ -52,9 +55,13 @@ export const Tag = styled.a<Props>`
     transition: all 0.6s ${bezier};
   }
 
-  ${({ active }) =>
-    active &&
-    css`
+  :active {
+    opacity: 0.3;
+    transition: opacity 0.1s ease;
+  }
+
+  ${({ active }) => {
+    const activeStyle = css`
       color: ${activeColor};
       opacity: 1;
 
@@ -62,5 +69,11 @@ export const Tag = styled.a<Props>`
       ::after {
         width: calc(100% - 4px);
       }
-    `};
+      :active {
+        opacity: 0.3;
+        transition: opacity 0.1s ease;
+      }
+    `
+    return active && activeStyle
+  }};
 `

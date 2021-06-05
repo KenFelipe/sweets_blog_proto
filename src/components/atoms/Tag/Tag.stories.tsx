@@ -30,3 +30,11 @@ FontSize2x.args = {
   underlineWeight: '3px',
   active: false,
 }
+
+export const WithOnClick = Template.bind({})
+WithOnClick.storyName = 'With onclick()'
+WithOnClick.args = {
+  children: 'Click!',
+  active: false,
+  onClick: () => alert('Tag Clicked!'),
+}
