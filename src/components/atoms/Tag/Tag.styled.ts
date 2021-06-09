@@ -8,6 +8,7 @@ type Props = Pick<
 
 const bezier = 'cubic-bezier(.27,.8,.35, 1)'
 const activeColor = '#323232'
+const underlineOff = '6px'
 
 export const Tag = styled.a<Props>`
   user-select: none;
@@ -15,14 +16,15 @@ export const Tag = styled.a<Props>`
 
   display: inline-block;
   cursor: pointer;
+  text-transform: capitalize;
 
   position: relative;
   padding: 2px 4px;
 
   font-size: ${({ fontSize }) => fontSize || '1.8rem'};
   font-style: italic;
-  letter-spacing: 0.12rem;
   font-weight: 600;
+  letter-spacing: 0.12rem;
 
   color: #626262;
   opacity: 0.7;
@@ -35,7 +37,7 @@ export const Tag = styled.a<Props>`
 
     /* Underline */
     ::after {
-      width: calc(100% - 4px);
+      width: calc(100% - ${underlineOff});
     }
   }
 
@@ -68,7 +70,7 @@ export const Tag = styled.a<Props>`
 
       /* Underline */
       ::after {
-        width: calc(100% - 4px);
+        width: calc(100% - ${underlineOff});
       }
       :active {
         opacity: 0.3;

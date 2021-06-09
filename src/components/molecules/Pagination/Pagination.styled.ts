@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+type ArrowProps = {
+  hidden: boolean
+}
+
 export const Container = styled.div`
   display: flex;
   justify-content: space-around;
@@ -36,12 +40,18 @@ export const Container = styled.div`
     }
 
     :hover {
-      opacity: 0.7;
+      opacity: 0.6;
+    }
+
+    :active {
+      opacity: 0.3;
     }
   }
 `
 
-export const Prev = styled.a`
+export const Prev = styled.a<ArrowProps>`
+  visibility: ${({ hidden }) => (hidden ? 'hidden' : 'visible')};
+
   ::after {
     transform: rotate(45deg);
     border-bottom: 1.8px solid #121212;
@@ -50,7 +60,9 @@ export const Prev = styled.a`
   }
 `
 
-export const Next = styled.a`
+export const Next = styled.a<ArrowProps>`
+  visibility: ${({ hidden }) => (hidden ? 'hidden' : 'visible')};
+
   ::after {
     transform: rotate(45deg);
     border-top: 1.8px solid #121212;

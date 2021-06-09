@@ -24,6 +24,7 @@
       "@/molecules/*": ["src/components/molecules/*"],
       "@/organisms/*": ["src/components/organisms/*"],
       "@/templates/*": ["src/components/templates/*"],
+      "@/api/*": ["src/api/*"],
       "@/styles/*": ["src/styles/*"],
       "@/utils/*": ["src/utils/*"]
     },

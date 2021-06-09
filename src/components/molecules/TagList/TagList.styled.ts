@@ -13,9 +13,11 @@ export const Container = styled.div`
     ::after {
       content: '/';
       display: inline-block;
+      margin: 0px 6px;
+
+      /* content: '|';
       position: relative;
-      bottom: 2px;
-      margin: 0px 4px;
+      bottom: 2px; */
     }
 
     :last-child,
