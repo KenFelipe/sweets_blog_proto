@@ -15,11 +15,15 @@ export const Pagination = ({
 }: PaginationProps) => {
   return (
     <Styled.Container>
-      {currentPage > 1 && <Styled.Prev onClick={onClickPrev} />}
+      <Styled.Prev
+        onClick={onClickPrev}
+        hidden={currentPage <= 1}
+      />
       <span>{currentPage}</span>
-      {currentPage < maxPages && (
-        <Styled.Next onClick={onClickNext} />
-      )}
+      <Styled.Next
+        onClick={onClickNext}
+        hidden={currentPage >= maxPages}
+      />
     </Styled.Container>
   )
 }

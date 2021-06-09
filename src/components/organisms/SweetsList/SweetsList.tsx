@@ -68,15 +68,22 @@ export const SweetsList = () => {
 
   return (
     <>
-      <TagList
-        tagListData={['all', ...categories].map(category => ({
-          onClick: () => setActiveCategory(category),
-          active: category === activeCategory,
-          children: category,
-        }))}
-      />
+      <Styled.CategoriesWrapper>
+        <h3>Category</h3>
+        <div>
+          <TagList
+            tagListData={['all', ...categories].map(
+              category => ({
+                onClick: () => setActiveCategory(category),
+                active: category === activeCategory,
+                children: category,
+              }),
+            )}
+          />
+        </div>
+      </Styled.CategoriesWrapper>
 
-      <Styled.Wrapper>
+      <Styled.SweetsWrapper>
         {sweets.map(({ name, price, image }, i) => (
           <SweetsCard
             key={i}
@@ -87,14 +94,16 @@ export const SweetsList = () => {
             isLink={true}
           />
         ))}
-      </Styled.Wrapper>
+      </Styled.SweetsWrapper>
 
-      <Pagination
-        currentPage={currentPage}
-        maxPages={maxPages}
-        onClickNext={getNextSweets}
-        onClickPrev={getPreviousSweets}
-      />
+      <Styled.PaginationWrapper>
+        <Pagination
+          currentPage={currentPage}
+          maxPages={maxPages}
+          onClickNext={getNextSweets}
+          onClickPrev={getPreviousSweets}
+        />
+      </Styled.PaginationWrapper>
     </>
   )
 }
