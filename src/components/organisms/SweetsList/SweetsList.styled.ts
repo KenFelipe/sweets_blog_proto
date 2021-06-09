@@ -11,6 +11,7 @@ export const SweetsWrapper = styled.div`
   }
 
   max-width: 960px;
+  margin: 0 auto;
 `
 
 export const CategoriesWrapper = styled.div`
