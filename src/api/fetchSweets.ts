@@ -1,15 +1,22 @@
 import { gql } from '@apollo/client'
+import { client } from '@/api/connectServer'
 
-export const fetchSweets = async (
-  client,
+export const fetchSweets = (
   limit: number,
   start = 0,
+  category = '',
 ) => {
+  const filter = `limit: ${limit}, start: ${start}, ${
+    category
+      ? `where: { categories: { name: "${category}" } }`
+      : ''
+  }`
+
   return client
     .query({
       query: gql`
         query FetchSweets {
-          sweets(limit:${limit}, start:${start},) {
+          sweets(${filter}) {
             id
             name
             price
@@ -22,6 +29,34 @@ export const fetchSweets = async (
     })
     .then(response => ({
       data: response.data,
+      loading: response.loading,
+      networkStatus: response.networkStatus,
+    }))
+}
+
+export const fetchSweetsCount = (category = '') => {
+  return client
+    .query({
+      query: !category
+        ? gql`
+            query FetchSweetsCount {
+              sweetsCount
+            }
+          `
+        : gql`
+            query FetchSweetsCountWithCategory {
+              sweetsConnection(where: { categories: { name: "${category}" } }) {
+                aggregate {
+                  count
+                }
+              }
+            }
+        `,
+    })
+    .then(response => ({
+      count: !category
+        ? response.data.sweetsCount
+        : response.data.sweetsConnection.aggregate.count,
       loading: response.loading,
       networkStatus: response.networkStatus,
     }))
