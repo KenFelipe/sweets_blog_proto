@@ -1,16 +1,14 @@
 import { Story, Meta } from '@storybook/react'
 import { mobileFirstViewportParams } from '@/utils/storybook/mobileFirstViewport'
 
-import { TitleSection, TitleSectionProps } from './TitleSection'
+import { TitleSection } from './TitleSection'
 
 export default {
   title: 'Organisms/TitleSection',
   component: TitleSection,
 } as Meta
 
-const Template: Story<TitleSectionProps> = args => (
-  <TitleSection {...args} />
-)
+const Template: Story = args => <TitleSection {...args} />
 
 export const MobileSmall = Template.bind({})
 MobileSmall.storyName = 'Mobile(sm)'

@@ -1,6 +1,4 @@
-import styled from 'styled-components'
-// import { TitleSectionProps } from './TitleSection'
-
+import styled, { css } from 'styled-components'
 import { breakpoints } from '@/styles/breakpoints'
 
 export const TitleSection = styled.div`
@@ -8,20 +6,22 @@ export const TitleSection = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  height: 100vh;
+  min-height: 100vh;
 
-  color: #343434;
-  background-image: url('https://res.cloudinary.com/cloudken/image/upload/v1623294970/stockvault-abstract-beautiful-pink-gradient-background-with-bokeh268874_yg86dc.jpg');
-  background-color: pink;
+  color: #fff;
+  background-image: url('https://res.cloudinary.com/cloudken/image/upload/v1623294407/decorating-delicious-homemade-eclairs-with-chocolate-peanuts_gjzrex.jpg');
   background-size: cover;
   background-attachment: fixed;
-
-  /* color: #fff;
-  background-image: url('https://res.cloudinary.com/cloudken/image/upload/v1623294407/decorating-delicious-homemade-eclairs-with-chocolate-peanuts_gjzrex.jpg');
-  background-position-x: right; */
+  background-position-x: right;
 
   h1 {
+    ${({ theme }) => css`
+      max-width: ${theme.contentWidth};
+    `}
+
     display: block;
+    margin: 0 auto;
+
     text-align: left;
     text-align: right;
 

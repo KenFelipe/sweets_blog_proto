@@ -1,12 +1,6 @@
 import * as Styled from './TitleSection.styled'
 
-export type TitleSectionProps = {
-  children: React.ReactNode
-}
-
-export const TitleSection = ({
-  children,
-}: TitleSectionProps) => {
+export const TitleSection = () => {
   return (
     <Styled.TitleSection>
       <h1>
@@ -17,7 +11,7 @@ export const TitleSection = ({
         <span>
           Tel:
           <br />
-          (11)94546-6539
+          (11)94321-9428
         </span>
       </h1>
     </Styled.TitleSection>
