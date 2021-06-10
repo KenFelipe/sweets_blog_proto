@@ -5,10 +5,10 @@ export const Arrow = styled.div<ArrowProps>`
   display: block;
   position: absolute;
 
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
-  min-height: 18px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
 
   border-bottom: 1.8px solid #121212;
   border-left: 1.8px solid #121212;
