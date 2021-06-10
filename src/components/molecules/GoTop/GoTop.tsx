@@ -13,8 +13,8 @@ export const GoTop = () => {
     >
       <Arrow
         direction="up"
-        offsetLeft="50%"
-        offsetBottom="32px"
+        offsetLeft="52%"
+        offsetBottom="30px"
       />
       <span>Top</span>
     </Styled.GoTopButton>

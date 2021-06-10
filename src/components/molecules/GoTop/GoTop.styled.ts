@@ -8,11 +8,12 @@ export const GoTopButton = styled.a`
   cursor: pointer;
 
   width: 60px;
-  height: 58px;
+  height: 50px;
   color: #454545;
 
   :hover {
     opacity: 0.7;
+    color: #454545;
   }
 
   :active {
@@ -21,7 +22,7 @@ export const GoTopButton = styled.a`
 
   & > span {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 600;
     letter-spacing: 2px;
     padding: 4px 0;
