@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { breakpoints } from '@/styles/breakpoints'
 
 export const SweetsWrapper = styled.div`
@@ -10,7 +10,9 @@ export const SweetsWrapper = styled.div`
     grid-auto-columns: minmax(2fr, 3fr);
   }
 
-  max-width: 960px;
+  ${({ theme }) => css`
+    max-width: ${theme.contentWidth};
+  `}
   margin: 0 auto;
 `
 
@@ -18,8 +20,10 @@ export const CategoriesWrapper = styled.div`
   margin-bottom: 30px;
 
   & > h3 {
+    color: #282828;
     margin: 16px 0;
-    font-size: 4.2rem;
+
+    font-size: 3.2rem;
     font-style: italic;
     font-weight: 600;
     text-align: center;
@@ -32,7 +36,7 @@ export const CategoriesWrapper = styled.div`
 `
 
 export const PaginationWrapper = styled.div`
-  margin: 26px 0;
+  margin: 46px 0;
 
   & > div {
     margin: 0 auto;
