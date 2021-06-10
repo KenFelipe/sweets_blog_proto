@@ -112,12 +112,17 @@ export const Content = styled.div`
   height: 100%;
 
   color: #fff;
+  border: 0;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   @media (min-width: ${breakpoints.lg}) {
+    ${({ theme }) => css`
+      border: 1px solid ${theme.color.mainSection};
+    `}
+
     :hover {
       ${Background} {
         ${expandBackground};
