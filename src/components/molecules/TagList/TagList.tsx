@@ -19,6 +19,7 @@ export const TagList = ({ tagListData = [] }: TagListProps) => {
     const handleOnResize = () => {
       tagRefs.forEach((_, i) => {
         if (i === 0) return
+        if (!tagRefs[i].current) return
 
         tagRefs[i].current.getBoundingClientRect().top >
         tagRefs[i - 1].current.getBoundingClientRect().top
