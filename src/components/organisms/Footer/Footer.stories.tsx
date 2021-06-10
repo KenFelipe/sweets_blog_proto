@@ -4,17 +4,6 @@ import { Footer } from './Footer'
 export default {
   title: 'Organisms/Footer',
   component: Footer,
-  // decorators: [
-  //   Story => (
-  //     <div
-  //       style={{
-  //         height: '300vh',
-  //       }}
-  //     >
-  //       <Story />
-  //     </div>
-  //   ),
-  // ],
 } as Meta
 
 const Template: Story = args => <Footer {...args} />

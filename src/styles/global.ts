@@ -6,7 +6,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1.6rem;
+    margin: 0;
   }
 
   *, ::after, ::before {
@@ -15,6 +17,11 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: #0f73ee;
+
+    :hover {
+      color: #0d60c8;
+    }
   }
 
   p {
@@ -25,5 +32,16 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-weight: normal;
     font-size: inherit;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    ::marker {
+      font-size: 10px;
+    }
   }
 `

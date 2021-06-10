@@ -1,10 +1,8 @@
 export const theme = {
-  color: {
-    primary: 'black',
-    secondary: 'pink',
+  contentWidth: '1024px',
+  background: {
+    footer: '#efce6e',
   },
-  size: {
-    primary: '1.6rem',
-    secondary: '3.2rem',
-  },
+  color: {},
+  size: {},
 } as const
