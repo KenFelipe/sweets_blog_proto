@@ -17,6 +17,11 @@ export const fetchHomeData = async () => {
             background_position_y
           }
 
+          main {
+            main_title
+            category_title
+          }
+
           # categories {
           #   name
           # }

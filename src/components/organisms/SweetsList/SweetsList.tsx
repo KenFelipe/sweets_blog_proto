@@ -8,7 +8,13 @@ import { SweetsCard } from '@/molecules/SweetsCard/SweetsCard'
 import { TagList } from '@/molecules/TagList/TagList'
 import { Pagination } from '@/molecules/Pagination/Pagination'
 
-export const SweetsList = () => {
+export type SweetsListProps = {
+  category_title: string
+}
+
+export const SweetsList = ({
+  category_title,
+}: SweetsListProps) => {
   const [sweets, setSweets] = useState([])
 
   const [categories, setCategories] = useState([])
@@ -69,7 +75,7 @@ export const SweetsList = () => {
   return (
     <>
       <Styled.CategoriesWrapper>
-        <h3>Category</h3>
+        <h3>{category_title}</h3>
         <div>
           <TagList
             tagListData={['all', ...categories].map(

@@ -5,15 +5,23 @@ import {
   TitleSectionProps,
 } from '@/organisms/TitleSection/TitleSection'
 
-import { SweetsList } from '@/organisms/SweetsList/SweetsList'
+import {
+  SweetsList,
+  SweetsListProps,
+} from '@/organisms/SweetsList/SweetsList'
 import { Footer } from '@/organisms/Footer/Footer'
 import { GoTop } from '@/molecules/GoTop/GoTop'
 
+export type MainDataProps = {
+  main_title: string
+} & SweetsListProps
+
 export type HomeProps = {
   titleData: TitleSectionProps
+  mainData: MainDataProps
 }
 
-export const Home = ({ titleData }: HomeProps) => {
+export const Home = ({ titleData, mainData }: HomeProps) => {
   return (
     <Styled.Home>
       <TitleSection
@@ -27,9 +35,9 @@ export const Home = ({ titleData }: HomeProps) => {
 
       <main>
         <h2>
-          <span>Sweets</span>
+          <span>{mainData.main_title}</span>
         </h2>
-        <SweetsList />
+        <SweetsList category_title={mainData.category_title} />
 
         <GoTop />
       </main>

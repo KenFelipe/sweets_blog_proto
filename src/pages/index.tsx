@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
 
-import { Home } from '@/templates/Home/Home'
+import { Home, MainDataProps } from '@/templates/Home/Home'
 import { fetchHomeData } from '@/api/fetchHomeData'
 
 import { TitleSectionProps } from '@/organisms/TitleSection/TitleSection'
@@ -9,6 +9,7 @@ import { TitleSectionProps } from '@/organisms/TitleSection/TitleSection'
 export type IndexProps = {
   data: {
     title: TitleSectionProps
+    main: MainDataProps
   }
 }
 
@@ -20,7 +21,7 @@ export default function Index({ data }: IndexProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Home titleData={data.title} />
+      <Home titleData={data.title} mainData={data.main} />
     </>
   )
 }
