@@ -1,18 +1,29 @@
 import * as Styled from './Home.styled'
 
-import { TitleSection } from '@/organisms/TitleSection/TitleSection'
+import {
+  TitleSection,
+  TitleSectionProps,
+} from '@/organisms/TitleSection/TitleSection'
+
 import { SweetsList } from '@/organisms/SweetsList/SweetsList'
 import { Footer } from '@/organisms/Footer/Footer'
 import { GoTop } from '@/molecules/GoTop/GoTop'
 
 export type HomeProps = {
-  children?: React.ReactNode
+  titleData: TitleSectionProps
 }
 
-export const Home = ({ children }: HomeProps) => {
+export const Home = ({ titleData }: HomeProps) => {
   return (
     <Styled.Home>
-      <TitleSection />
+      <TitleSection
+        title={titleData.title}
+        tel={titleData.tel}
+        tel_label={titleData.tel_label}
+        background={titleData.background}
+        background_position_x={titleData.background_position_x}
+        background_position_y={titleData.background_position_y}
+      />
 
       <main>
         <h2>

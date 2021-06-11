@@ -1,18 +1,55 @@
 import * as Styled from './TitleSection.styled'
 
-export const TitleSection = () => {
+export type TitleSectionProps = {
+  title: string
+  tel: string
+  tel_label: string
+  background: {
+    url: string
+  }
+  background_position_x: string
+  background_position_y: string
+}
+
+export const TitleSection = ({
+  title,
+  tel,
+  tel_label,
+  background,
+  background_position_x,
+  background_position_y,
+}: TitleSectionProps) => {
   return (
     <Styled.TitleSection>
+      <Styled.BackgroundLayer />
+      <Styled.BackgroundImage
+        style={{
+          backgroundImage: `url('${background.url}')`,
+          backgroundPositionX: `${background_position_x}`,
+          backgroundPositionY: background_position_y,
+        }}
+      />
       <h1>
-        Lorem ipsum sit amet consectetur adipisicing elit.
-        <br />
-        Iure quam.
-        <br />
-        <span>
-          Tel:
+        {title.split('\n').map((line, i) => (
+          <Styled.Title key={i}>
+            {line}
+            <br />
+          </Styled.Title>
+        ))}
+        <Styled.Tel>
+          <span>{tel_label}&nbsp;</span>
           <br />
-          (11)94321-9428
-        </span>
+          <a
+            href={`https://web.whatsapp.com/send?phone=55${tel.replace(
+              /[^0-9]/g,
+              '',
+            )}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {tel}
+          </a>
+        </Styled.Tel>
       </h1>
     </Styled.TitleSection>
   )
