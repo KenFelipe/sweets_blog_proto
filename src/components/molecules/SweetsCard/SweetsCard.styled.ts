@@ -20,8 +20,17 @@ export const Background = styled.div`
 `
 
 export const Price = styled.span`
-  padding: 5px 8px;
+  @media (min-width: ${breakpoints.sm}) {
+    font-size: 1.8rem;
+  }
+
+  @media (min-width: ${breakpoints.lg}) {
+    font-size: 2rem;
+    letter-spacing: 1.2px;
+  }
+
   font-style: italic;
+  padding: 5px 8px;
   z-index: 1;
 `
 
@@ -120,7 +129,7 @@ export const Content = styled.div`
 
   @media (min-width: ${breakpoints.lg}) {
     ${({ theme }) => css`
-      border: 1px solid ${theme.color.mainSection};
+      border: 1px solid ${theme.background.main};
     `}
 
     :hover {
