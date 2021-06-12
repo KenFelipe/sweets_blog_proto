@@ -37,7 +37,7 @@ export const Home = ({
         background_position_y={titleData.background_position_y}
       />
 
-      <main>
+      <main id="products">
         <h2>
           <span>{mainData.main_title}</span>
         </h2>

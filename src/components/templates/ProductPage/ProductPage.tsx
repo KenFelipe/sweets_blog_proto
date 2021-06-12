@@ -27,7 +27,7 @@ export const ProductPage = ({
     <Styled.ProductPage>
       <main>
         <Back //
-          href="../#sweets"
+          href="../#products"
           newTab={false}
         />
         <ProductIntroduction
