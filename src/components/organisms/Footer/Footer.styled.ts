@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { breakpoints } from '@/styles/breakpoints'
 
 export const Footer = styled.div`
   ${({ theme }) => css`
@@ -9,9 +10,13 @@ export const Footer = styled.div`
     ${({ theme }) => css`
       max-width: ${theme.contentWidth};
     `}
-    margin: 0 auto;
 
-    padding: 16px 15px;
+    margin: 0 auto;
+    padding: 16px 16px;
+
+    @media (min-width: ${breakpoints.md}) {
+      padding: 16px 32px;
+    }
 
     span {
       font-style: italic;
