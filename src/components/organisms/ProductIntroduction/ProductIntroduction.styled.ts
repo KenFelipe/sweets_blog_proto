@@ -21,7 +21,16 @@ export const Wrapper = styled.div`
     justify-content: center;
 
     flex-basis: ${imagePer}%;
-    padding: 16px 32px 8px 16px;
+
+    margin-right: 16px;
+    padding: 16px 0 8px 16px;
+
+    @media (min-width: ${breakpoints.md}) {
+      min-width: 260px;
+
+      margin-right: 32px;
+      padding: 16px 0 8px 16px;
+    }
 
     & > ${Square} {
       margin: 0 auto;
