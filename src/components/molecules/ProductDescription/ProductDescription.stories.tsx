@@ -25,9 +25,8 @@ export default {
   ],
   args: {
     name: 'Tiramisu',
-    description: TiramisuDescription,
-    // description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    //   Facere, modi hic delectus et debitis!`,
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Facere, modi hic delectus et debitis!`,
     // description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
     //   Qui cupiditate excepturi sit mollitia ea nobis.
     //   Maxime ad obcaecati ipsam nostrum quidem.
@@ -54,3 +53,14 @@ Tablet.parameters = { ...mobileFirstViewportParams.tablet }
 
 export const LaptopView = Template.bind({})
 LaptopView.storyName = 'Laptop/Desktop'
+
+export const WithLargeText = Template.bind({})
+WithLargeText.storyName = 'With large text'
+WithLargeText.args = {
+  description:
+    TiramisuDescription +
+    '\n\n' +
+    TiramisuDescription +
+    '\n\n' +
+    TiramisuDescription,
+}

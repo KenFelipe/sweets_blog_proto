@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
   color: #282828;
   padding: 16px 15px 12px;
 
   & > h2 {
+    width: 100%;
     margin: 0 0 16px;
     text-align: left;
 
@@ -17,7 +21,9 @@ export const Container = styled.div`
   }
 
   & > p {
-    margin: 16px 0 12px;
+    flex-grow: 1;
+
+    margin: 0;
     padding: 0 2px;
 
     & > span {

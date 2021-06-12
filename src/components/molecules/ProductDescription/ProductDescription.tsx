@@ -21,6 +21,7 @@ export const ProductDescription = ({
             <br />
           </span>
         ))}
+        <br />
       </p>
       <span>{price}</span>
     </Styled.Container>
