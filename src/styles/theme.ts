@@ -4,6 +4,8 @@ export const theme = {
     footer: '#efce6e',
     main: '#f8f8ca',
   },
-  color: {},
+  color: {
+    black1: '#282828',
+  },
   size: {},
 } as const
