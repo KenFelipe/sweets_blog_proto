@@ -19,7 +19,7 @@ export default function SweetsPage({ data }: ProductPageData) {
   return (
     <>
       <Head>
-        <title>Sweets ...</title>
+        <title>Sweets/{data.sweets[0].name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
