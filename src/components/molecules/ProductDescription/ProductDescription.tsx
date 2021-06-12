@@ -1,9 +1,10 @@
 import * as Styled from './ProductDescription.styled'
+import { toBRLNotation } from '@/utils/toBRLNotation'
 
 export type ProductDescriptionProps = {
   name: string
   description: string
-  price: string
+  price: number
 }
 
 export const ProductDescription = ({
@@ -23,7 +24,7 @@ export const ProductDescription = ({
         ))}
         <br />
       </p>
-      <span>{price}</span>
+      <span>{toBRLNotation(price)}</span>
     </Styled.Container>
   )
 }

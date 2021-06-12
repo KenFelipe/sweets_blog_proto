@@ -1,14 +1,14 @@
 import * as Styled from './ProductIntroduction.styled'
 
 import { Square } from '@/atoms/Square/Square'
-import { ProductDescription } from '@/molecules/ProductDescription/ProductDescription'
+import {
+  ProductDescription,
+  ProductDescriptionProps,
+} from '@/molecules/ProductDescription/ProductDescription'
 
 export type ProductIntroductionProps = {
-  name: string
-  description: string
-  price: string
   imageUrl: string
-}
+} & ProductDescriptionProps
 
 export const ProductIntroduction = ({
   name,

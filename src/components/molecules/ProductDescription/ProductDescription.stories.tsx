@@ -6,8 +6,6 @@ import {
   ProductDescriptionProps,
 } from './ProductDescription'
 
-import { toBRLNotation } from '@/utils/toBRLNotation'
-
 const TiramisuDescription = `Tiramisu (Italian: tiramisù) is a coffee-flavoured Italian dessert.
   It is made of ladyfingers (savoiardi) dipped in coffee, layered with a whipped mixture of eggs, sugar, and mascarpone cheese, flavoured with cocoa.
   The recipe has been adapted into many varieties of cakes and other desserts.
@@ -31,7 +29,7 @@ export default {
     //   Qui cupiditate excepturi sit mollitia ea nobis.
     //   Maxime ad obcaecati ipsam nostrum quidem.
     //   Hic, possimus ullam accusantium dolore asperiores nulla facere sint.`,
-    price: toBRLNotation(16.4),
+    price: 16.4,
   },
 } as Meta
 
