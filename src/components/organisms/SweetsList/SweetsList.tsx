@@ -18,9 +18,12 @@ export const SweetsList = ({
   category_title,
   categories,
 }: SweetsListProps) => {
+  const categoryLabelAll = 'todos'
   const [sweets, setSweets] = useState([])
 
-  const [activeCategory, setActiveCategory] = useState('all')
+  const [activeCategory, setActiveCategory] = useState(
+    categoryLabelAll,
+  )
 
   const [perPage] = useState(6)
   const [maxPages, setMaxPages] = useState(1)
@@ -40,7 +43,7 @@ export const SweetsList = ({
   // On Change Category
   useEffect(() => {
     const searchCategory =
-      activeCategory !== 'all' && activeCategory
+      activeCategory !== categoryLabelAll && activeCategory
 
     fetchSweetsCount(searchCategory).then(({ count }) => {
       setMaxPages(Math.ceil(count / perPage))
@@ -76,13 +79,14 @@ export const SweetsList = ({
         <h3>{category_title}</h3>
         <div>
           <TagList
-            tagListData={[{ name: 'all' }, ...categories].map(
-              category => ({
-                onClick: () => setActiveCategory(category.name),
-                active: category.name === activeCategory,
-                children: category.name,
-              }),
-            )}
+            tagListData={[
+              { name: categoryLabelAll },
+              ...categories,
+            ].map(category => ({
+              onClick: () => setActiveCategory(category.name),
+              active: category.name === activeCategory,
+              children: category.name,
+            }))}
           />
         </div>
       </Styled.CategoriesWrapper>
