@@ -22,9 +22,9 @@ export const fetchHomeData = async () => {
             category_title
           }
 
-          # categories {
-          #   name
-          # }
+          categories {
+            name
+          }
         }
       `,
     })

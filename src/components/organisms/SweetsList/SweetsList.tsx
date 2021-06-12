@@ -1,7 +1,6 @@
-import * as Styled from './SweetsList.styled'
 import { useEffect, useState } from 'react'
+import * as Styled from './SweetsList.styled'
 
-import { fetchCategories } from '@/api/fetchCategories'
 import { fetchSweets, fetchSweetsCount } from '@/api/fetchSweets'
 
 import { SweetsCard } from '@/molecules/SweetsCard/SweetsCard'
@@ -10,14 +9,17 @@ import { Pagination } from '@/molecules/Pagination/Pagination'
 
 export type SweetsListProps = {
   category_title: string
+  categories: {
+    name: string
+  }[]
 }
 
 export const SweetsList = ({
   category_title,
+  categories,
 }: SweetsListProps) => {
   const [sweets, setSweets] = useState([])
 
-  const [categories, setCategories] = useState([])
   const [activeCategory, setActiveCategory] = useState('all')
 
   const [perPage] = useState(6)
@@ -26,10 +28,6 @@ export const SweetsList = ({
 
   // Init
   useEffect(() => {
-    fetchCategories().then(({ categories }) => {
-      setCategories(categories.map(category => category.name))
-    })
-
     fetchSweetsCount().then(({ count }) => {
       setMaxPages(Math.ceil(count / perPage))
     })
@@ -78,11 +76,11 @@ export const SweetsList = ({
         <h3>{category_title}</h3>
         <div>
           <TagList
-            tagListData={['all', ...categories].map(
+            tagListData={[{ name: 'all' }, ...categories].map(
               category => ({
-                onClick: () => setActiveCategory(category),
-                active: category === activeCategory,
-                children: category,
+                onClick: () => setActiveCategory(category.name),
+                active: category.name === activeCategory,
+                children: category.name,
               }),
             )}
           />

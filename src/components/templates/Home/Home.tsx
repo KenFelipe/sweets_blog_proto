@@ -14,14 +14,18 @@ import { GoTop } from '@/molecules/GoTop/GoTop'
 
 export type MainDataProps = {
   main_title: string
-} & SweetsListProps
+} & Pick<SweetsListProps, 'category_title'>
 
 export type HomeProps = {
   titleData: TitleSectionProps
   mainData: MainDataProps
-}
+} & Pick<SweetsListProps, 'categories'>
 
-export const Home = ({ titleData, mainData }: HomeProps) => {
+export const Home = ({
+  titleData,
+  mainData,
+  categories,
+}: HomeProps) => {
   return (
     <Styled.Home>
       <TitleSection
@@ -37,7 +41,10 @@ export const Home = ({ titleData, mainData }: HomeProps) => {
         <h2>
           <span>{mainData.main_title}</span>
         </h2>
-        <SweetsList category_title={mainData.category_title} />
+        <SweetsList
+          category_title={mainData.category_title}
+          categories={categories}
+        />
 
         <GoTop />
       </main>
