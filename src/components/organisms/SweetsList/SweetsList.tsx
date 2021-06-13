@@ -99,7 +99,7 @@ export const SweetsList = ({
             key={i}
             name={name}
             price={price}
-            imageUrl={image.url}
+            imageUrl={image ? image.url : ''}
             href={`/sweets/${name.toLowerCase()}`}
             isLink={true}
           />

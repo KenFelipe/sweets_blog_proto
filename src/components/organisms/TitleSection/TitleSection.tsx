@@ -36,7 +36,7 @@ export const TitleSection = ({
       />
       <Styled.BackgroundImage
         style={{
-          backgroundImage: background.url
+          backgroundImage: background
             ? `url('${background.url}')`
             : 'none',
           backgroundPositionX: background_position_x,
