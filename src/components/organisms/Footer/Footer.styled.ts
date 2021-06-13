@@ -29,6 +29,9 @@ export const Footer = styled.div`
     }
 
     li {
+      div {
+        display: inline-block;
+      }
       margin: 6px 0;
       font-size: 1.5rem;
 
