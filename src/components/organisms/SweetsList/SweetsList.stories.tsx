@@ -1,19 +1,35 @@
 import { Story, Meta } from '@storybook/react'
 import { mobileFirstViewportParams } from '@/utils/storybook/mobileFirstViewport'
 
-import {
-  SweetsList,
-  // SweetsListProps,
-} from './SweetsList'
+import { SweetsList, SweetsListProps } from './SweetsList'
 
 // import { getSweetsListMockData } from './SweetsList.mock'
-
 // max: 20
 // const mockSweetsListLength = 3
 
 export default {
   title: 'Organisms/SweetsList',
   component: SweetsList,
+  args: {
+    category_title: 'Category',
+    categories: [
+      {
+        name: 'category_1',
+      },
+      {
+        name: 'category_2',
+      },
+      {
+        name: 'category_3',
+      },
+      {
+        name: 'category_4',
+      },
+      {
+        name: 'category_5',
+      },
+    ],
+  },
   // loaders: [
   //   async () => ({
   //     sweetsListData: await getSweetsListMockData(
@@ -27,7 +43,9 @@ export default {
 //   args,
 //   { loaded: { sweetsListData } },
 // ) => <SweetsList {...args} sweetsListData={sweetsListData} />
-const Template: Story = args => <SweetsList {...args} />
+const Template: Story<SweetsListProps> = args => (
+  <SweetsList {...args} />
+)
 
 export const MobileSmall = Template.bind({})
 MobileSmall.storyName = 'Mobile(small)'
