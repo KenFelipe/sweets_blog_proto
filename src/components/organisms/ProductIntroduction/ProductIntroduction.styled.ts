@@ -34,9 +34,11 @@ export const Wrapper = styled.div`
 
     & > ${Square} {
       margin: 0 auto;
+      min-width: 204px;
 
-      min-width: 220px;
-      max-width: 220px;
+      @media (min-width: ${breakpoints.sm}) {
+        min-width: 220px;
+      }
 
       @media (min-width: ${breakpoints.md}) {
         min-width: 260px;
@@ -49,5 +51,9 @@ export const Wrapper = styled.div`
 
   & > ${ProductDescription} {
     flex-basis: ${100 - imagePer}%;
+
+    @media (max-width: ${breakpoints.md}) {
+      padding: 26px 15px 12px;
+    }
   }
 `

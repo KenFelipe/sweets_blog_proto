@@ -24,7 +24,7 @@ export const ProductPage = styled.div`
     position: relative;
 
     flex-grow: 1;
-    padding: 64px 0 64px;
+    padding: 42px 0 64px;
 
     ${({ theme }) => css`
       max-width: ${theme.contentWidth};
