@@ -4,12 +4,14 @@ import {
   TitleSection,
   TitleSectionProps,
 } from '@/organisms/TitleSection/TitleSection'
+
 import {
   SweetsList,
+  CategoriesProps,
   SweetsListProps,
 } from '@/organisms/SweetsList/SweetsList'
-import { Footer, LicencesProps } from '@/organisms/Footer/Footer'
 
+import { Footer, LicencesProps } from '@/organisms/Footer/Footer'
 import { GoTop } from '@/molecules/GoTop/GoTop'
 
 export type MainDataProps = {
@@ -20,7 +22,8 @@ export type HomeProps = {
   titleData: TitleSectionProps
   mainData: MainDataProps
   footerData: LicencesProps
-} & Pick<SweetsListProps, 'categories'>
+  categories: CategoriesProps
+}
 
 export const Home = ({
   titleData,

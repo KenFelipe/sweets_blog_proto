@@ -7,11 +7,13 @@ import { SweetsCard } from '@/molecules/SweetsCard/SweetsCard'
 import { TagList } from '@/molecules/TagList/TagList'
 import { Pagination } from '@/molecules/Pagination/Pagination'
 
+export type CategoriesProps = {
+  name: string
+}[]
+
 export type SweetsListProps = {
   category_title: string
-  categories: {
-    name: string
-  }[]
+  categories: CategoriesProps
 }
 
 export const SweetsList = ({

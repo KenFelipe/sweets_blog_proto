@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 import { fetchHomeData } from '@/api/fetchHomeData'
 import { Home, MainDataProps } from '@/templates/Home/Home'
 import { TitleSectionProps } from '@/organisms/TitleSection/TitleSection'
-import { SweetsListProps } from '@/organisms/SweetsList/SweetsList'
+import { CategoriesProps } from '@/organisms/SweetsList/SweetsList'
 import { LicencesProps } from '@/organisms/Footer/Footer'
 
 export type IndexProps = {
@@ -12,7 +12,8 @@ export type IndexProps = {
     title: TitleSectionProps
     main: MainDataProps
     licences: LicencesProps
-  } & Pick<SweetsListProps, 'categories'>
+    categories: CategoriesProps
+  }
 }
 
 export default function Index({ data }: IndexProps) {
