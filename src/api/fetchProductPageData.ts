@@ -14,7 +14,7 @@ export const fetchProductPageData = async sweetsName => {
           }
         }
 
-        licenceData: licences {
+        licences {
           dz {
             ... on ComponentPagesLicence {
               label

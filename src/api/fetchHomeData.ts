@@ -26,7 +26,7 @@ export const fetchHomeData = async () => {
             name
           }
 
-          licenceData: licences {
+          licences {
             dz {
               ... on ComponentPagesLicence {
                 label

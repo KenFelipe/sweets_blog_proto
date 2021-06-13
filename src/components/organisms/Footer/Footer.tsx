@@ -5,6 +5,10 @@ export type LicenceType = {
   url: string
 }
 
+export type LicencesProps = {
+  dz: LicenceType[]
+}[]
+
 export type FooterProps = {
   licenceData: {
     dz: LicenceType[]

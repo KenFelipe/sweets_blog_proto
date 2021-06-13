@@ -8,7 +8,7 @@ import {
   SweetsList,
   SweetsListProps,
 } from '@/organisms/SweetsList/SweetsList'
-import { Footer, FooterProps } from '@/organisms/Footer/Footer'
+import { Footer, LicencesProps } from '@/organisms/Footer/Footer'
 
 import { GoTop } from '@/molecules/GoTop/GoTop'
 
@@ -19,14 +19,14 @@ export type MainDataProps = {
 export type HomeProps = {
   titleData: TitleSectionProps
   mainData: MainDataProps
-} & FooterProps &
-  Pick<SweetsListProps, 'categories'>
+  footerData: LicencesProps
+} & Pick<SweetsListProps, 'categories'>
 
 export const Home = ({
   titleData,
   mainData,
   categories,
-  licenceData,
+  footerData,
 }: HomeProps) => {
   return (
     <Styled.Home>
@@ -51,7 +51,7 @@ export const Home = ({
         <GoTop />
       </main>
 
-      <Footer licenceData={licenceData} />
+      <Footer licenceData={footerData} />
     </Styled.Home>
   )
 }

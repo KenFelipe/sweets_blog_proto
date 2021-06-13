@@ -5,7 +5,7 @@ import {
   ProductIntroductionProps,
 } from '@/organisms/ProductIntroduction/ProductIntroduction'
 import { Back } from '@/atoms/Back/Back'
-import { Footer, FooterProps } from '@/organisms/Footer/Footer'
+import { Footer, LicencesProps } from '@/organisms/Footer/Footer'
 
 export type ProductProps = Omit<
   ProductIntroductionProps,
@@ -18,11 +18,12 @@ export type ProductProps = Omit<
 
 export type ProductPageProps = {
   productData: ProductProps
-} & FooterProps
+  footerData: LicencesProps
+}
 
 export const ProductPage = ({
   productData,
-  licenceData,
+  footerData,
 }: ProductPageProps) => {
   return (
     <Styled.ProductPage>
@@ -41,7 +42,7 @@ export const ProductPage = ({
         />
       </main>
 
-      <Footer licenceData={licenceData} />
+      <Footer licenceData={footerData} />
     </Styled.ProductPage>
   )
 }

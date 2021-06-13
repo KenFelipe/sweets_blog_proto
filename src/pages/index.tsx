@@ -5,14 +5,14 @@ import { fetchHomeData } from '@/api/fetchHomeData'
 import { Home, MainDataProps } from '@/templates/Home/Home'
 import { TitleSectionProps } from '@/organisms/TitleSection/TitleSection'
 import { SweetsListProps } from '@/organisms/SweetsList/SweetsList'
-import { FooterProps } from '@/organisms/Footer/Footer'
+import { LicencesProps } from '@/organisms/Footer/Footer'
 
 export type IndexProps = {
   data: {
     title: TitleSectionProps
     main: MainDataProps
-  } & FooterProps &
-    Pick<SweetsListProps, 'categories'>
+    licences: LicencesProps
+  } & Pick<SweetsListProps, 'categories'>
 }
 
 export default function Index({ data }: IndexProps) {
@@ -27,7 +27,7 @@ export default function Index({ data }: IndexProps) {
         titleData={data.title}
         mainData={data.main}
         categories={data.categories}
-        licenceData={data.licenceData}
+        footerData={data.licences}
       />
     </>
   )
