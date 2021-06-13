@@ -22,7 +22,7 @@ export const GoTopButton = styled.a`
 
   & > span {
     text-align: center;
-    font-size: 2.6rem;
+    font-size: 2.3rem;
     font-weight: 600;
     letter-spacing: 2px;
     padding: 4px 0;
