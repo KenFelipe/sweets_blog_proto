@@ -92,9 +92,10 @@ export const BackgroundImage = styled.div<BackgroundProps>`
 export const Title = styled.span`
   display: block;
 
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Volkhov', serif;
+  letter-spacing: 1.4px;
   font-size: 3.6rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.3;
 
   @media (min-width: ${breakpoints.sm}) {
@@ -113,10 +114,15 @@ export const Title = styled.span`
 export const Tel = styled.div`
   margin-top: 32px;
 
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 2.8rem;
+  font-family: 'Volkhov', serif;
+  font-size: 2.6rem;
   font-weight: 600;
   line-height: 1.3;
+  letter-spacing: 1.2px;
+
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 3rem;
+  }
 
   a {
     display: inline-block;
@@ -127,11 +133,14 @@ export const Tel = styled.div`
 
     transition: all 0.6s ${bezier};
 
+    font-family: 'Old Standard TT', serif;
     font-size: 2.4rem;
-    padding: 4px 18px 8px;
+    letter-spacing: normal;
+
+    padding: 8px 18px 2px;
 
     @media (min-width: ${breakpoints.sm}) {
-      padding: 4px 36px 8px;
+      padding: 8px 28px 2px;
       font-size: 2.8rem;
     }
 

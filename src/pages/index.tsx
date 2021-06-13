@@ -29,6 +29,20 @@ export default function Index({ data }: IndexProps) {
         />
         <title>{data.meta.site_name}</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+        />
+        {/* OldStandard TT */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap"
+          rel="stylesheet"
+        />
+        {/* Volkhov */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <Home
