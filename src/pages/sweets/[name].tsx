@@ -8,11 +8,12 @@ import {
   ProductPage,
   ProductProps,
 } from '@/templates/ProductPage/ProductPage'
+import { FooterProps } from '@/organisms/Footer/Footer'
 
 export type ProductPageData = {
   data: {
     sweets: ProductProps[]
-  }
+  } & FooterProps
 }
 
 export default function SweetsPage({ data }: ProductPageData) {
@@ -23,7 +24,10 @@ export default function SweetsPage({ data }: ProductPageData) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ProductPage productData={data.sweets[0]} />
+      <ProductPage
+        productData={data.sweets[0]}
+        licenceData={data.licenceData}
+      />
     </>
   )
 }

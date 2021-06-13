@@ -13,6 +13,15 @@ export const fetchProductPageData = async sweetsName => {
             url
           }
         }
+
+        licenceData: licences {
+          dz {
+            ... on ComponentPagesLicence {
+              label
+              url
+            }
+          }
+        }
       }
     `,
   })

@@ -25,6 +25,15 @@ export const fetchHomeData = async () => {
           categories {
             name
           }
+
+          licenceData: licences {
+            dz {
+              ... on ComponentPagesLicence {
+                label
+                url
+              }
+            }
+          }
         }
       `,
     })
