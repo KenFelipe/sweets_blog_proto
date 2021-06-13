@@ -9,9 +9,7 @@ export const TitleSection = styled.div`
   justify-content: center;
 
   min-height: 100vh;
-
   position: relative;
-  color: #fff;
 
   h1 {
     ${({ theme }) => css`
@@ -39,8 +37,6 @@ export const TitleSection = styled.div`
 `
 
 export const BackgroundLayer = styled.div`
-  background-color: #000;
-
   position: absolute;
   top: 0;
   top: 0;
@@ -51,8 +47,6 @@ export const BackgroundLayer = styled.div`
 `
 
 export const BackgroundImage = styled.div`
-  opacity: 0.7;
-
   background-size: cover;
   background-attachment: fixed;
 

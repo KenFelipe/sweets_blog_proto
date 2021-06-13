@@ -2,28 +2,38 @@ import * as Styled from './TitleSection.styled'
 
 export type TitleSectionProps = {
   title: string
+  text_color: string
   align: string
   tel: string
   tel_label: string
   background: {
     url: string
   }
+  background_opacity: number
+  background_layer: string
   background_position_x: string
   background_position_y: string
 }
 
 export const TitleSection = ({
   title,
+  text_color,
   align,
   tel,
   tel_label,
   background,
+  background_opacity,
+  background_layer,
   background_position_x,
   background_position_y,
 }: TitleSectionProps) => {
   return (
-    <Styled.TitleSection>
-      <Styled.BackgroundLayer />
+    <Styled.TitleSection //
+      style={{ color: text_color }}
+    >
+      <Styled.BackgroundLayer
+        style={{ backgroundColor: background_layer }}
+      />
       <Styled.BackgroundImage
         style={{
           backgroundImage: background.url
@@ -31,9 +41,12 @@ export const TitleSection = ({
             : 'none',
           backgroundPositionX: background_position_x,
           backgroundPositionY: background_position_y,
+          opacity: background_opacity,
         }}
       />
-      <h1 style={{ textAlign: align }}>
+      <h1 //
+        style={{ textAlign: align }}
+      >
         {title.split('\n').map((line, i) => (
           <Styled.Title key={i}>
             {line}

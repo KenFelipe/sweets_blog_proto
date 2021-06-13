@@ -12,12 +12,15 @@ export const fetchHomeData = async () => {
 
           title {
             title
+            text_color
             align
             tel_label
             tel
             background {
               url
             }
+            background_opacity
+            background_layer
             background_position_x
             background_position_y
           }

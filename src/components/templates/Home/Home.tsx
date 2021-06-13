@@ -38,9 +38,12 @@ export const Home = ({
         align={titleData.align}
         tel={titleData.tel}
         tel_label={titleData.tel_label}
+        text_color={titleData.text_color}
         background={titleData.background}
         background_position_x={titleData.background_position_x}
         background_position_y={titleData.background_position_y}
+        background_opacity={titleData.background_opacity}
+        background_layer={titleData.background_layer}
       />
 
       <main id="products">
