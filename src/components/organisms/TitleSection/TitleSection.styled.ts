@@ -3,7 +3,9 @@ import { breakpoints } from '@/styles/breakpoints'
 
 const bezier = 'cubic-bezier(.27,.8,.35, 1)'
 
-export const TitleSection = styled.div`
+type Props = { align: string }
+
+export const TitleSection = styled.div<Props>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +14,8 @@ export const TitleSection = styled.div`
   position: relative;
 
   h1 {
+    text-align: ${({ align }) => align || 'left'};
+
     ${({ theme }) => css`
       max-width: ${theme.contentWidth};
     `}

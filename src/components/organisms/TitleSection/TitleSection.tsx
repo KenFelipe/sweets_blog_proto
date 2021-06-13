@@ -29,6 +29,7 @@ export const TitleSection = ({
 }: TitleSectionProps) => {
   return (
     <Styled.TitleSection //
+      align={align}
       style={{ color: text_color }}
     >
       <Styled.BackgroundLayer
@@ -44,9 +45,7 @@ export const TitleSection = ({
           opacity: background_opacity,
         }}
       />
-      <h1 //
-        style={{ textAlign: align }}
-      >
+      <h1>
         {title.split('\n').map((line, i) => (
           <Styled.Title key={i}>
             {line}
