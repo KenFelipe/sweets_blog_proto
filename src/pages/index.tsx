@@ -23,6 +23,10 @@ export default function Index({ data }: IndexProps) {
   return (
     <>
       <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0"
+        />
         <title>{data.meta.site_name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

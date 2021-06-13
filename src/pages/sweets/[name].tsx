@@ -24,6 +24,10 @@ export default function SweetsPage({ data }: ProductPageData) {
   return (
     <>
       <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0"
+        />
         <title>
           {data.meta.site_name} - {data.sweets[0].name}
         </title>
