@@ -12,6 +12,9 @@ import { LicencesProps } from '@/organisms/Footer/Footer'
 
 export type ProductPageData = {
   data: {
+    meta: {
+      site_name: string
+    }
     sweets: ProductProps[]
     licences: LicencesProps
   }
@@ -21,7 +24,9 @@ export default function SweetsPage({ data }: ProductPageData) {
   return (
     <>
       <Head>
-        <title>Sweets/{data.sweets[0].name}</title>
+        <title>
+          {data.meta.site_name} - {data.sweets[0].name}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

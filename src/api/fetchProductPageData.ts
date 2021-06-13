@@ -5,6 +5,10 @@ export const fetchProductPageData = async sweetsName => {
   const response = await client.query({
     query: gql`
       query fetchProductPageData {
+        meta {
+          site_name
+        }
+
         sweets(where: { name_contains: "${sweetsName}" }) {
           name
           description

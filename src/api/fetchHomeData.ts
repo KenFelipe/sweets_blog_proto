@@ -6,6 +6,10 @@ export const fetchHomeData = async () => {
     .query({
       query: gql`
         query FetchSweets {
+          meta {
+            site_name
+          }
+
           title {
             title
             align

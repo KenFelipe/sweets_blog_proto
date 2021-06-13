@@ -9,6 +9,9 @@ import { LicencesProps } from '@/organisms/Footer/Footer'
 
 export type IndexProps = {
   data: {
+    meta: {
+      site_name: string
+    }
     title: TitleSectionProps
     main: MainDataProps
     licences: LicencesProps
@@ -20,7 +23,7 @@ export default function Index({ data }: IndexProps) {
   return (
     <>
       <Head>
-        <title>Next Plugin Boilerplate</title>
+        <title>{data.meta.site_name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
