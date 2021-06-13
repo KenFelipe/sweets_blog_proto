@@ -1,11 +1,19 @@
 import styled, { css } from 'styled-components'
 import { breakpoints } from '@/styles/breakpoints'
+import { TitleSectionProps } from './TitleSection'
 
 const bezier = 'cubic-bezier(.27,.8,.35, 1)'
 
-type Props = { align: string }
+type TextProps = { align: string }
 
-export const TitleSection = styled.div<Props>`
+type BackgroundProps = Pick<
+  TitleSectionProps,
+  'background_position_x' | 'background_position_y'
+> & {
+  backgroundUrl: string
+}
+
+export const TitleSection = styled.div<TextProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,17 +58,35 @@ export const BackgroundLayer = styled.div`
   z-index: -2;
 `
 
-export const BackgroundImage = styled.div`
-  background-size: cover;
-  background-attachment: fixed;
-
+export const BackgroundImage = styled.div<BackgroundProps>`
   position: absolute;
-  top: 0;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: -1;
+
+  ::before {
+    /* no use attachment: fixed */
+    /* background-attachment: fixed; */
+
+    background-image: ${({ backgroundUrl }) =>
+      `url(${backgroundUrl})`};
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-position-x: ${({ background_position_x }) =>
+      background_position_x};
+    background-position-y: ${({ background_position_y }) =>
+      background_position_y};
+
+    content: '';
+    display: block;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
 `
 
 export const Title = styled.span`

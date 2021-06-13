@@ -37,13 +37,16 @@ export const TitleSection = ({
       />
       <Styled.BackgroundImage
         style={{
-          backgroundImage: background
-            ? `url('${background.url}')`
-            : 'none',
-          backgroundPositionX: background_position_x,
-          backgroundPositionY: background_position_y,
+          // backgroundImage: background
+          //   ? `url('${background.url}')`
+          //   : 'none',
+          // backgroundPositionX: background_position_x,
+          // backgroundPositionY: background_position_y,
           opacity: background_opacity,
         }}
+        backgroundUrl={background ? background.url : 'none'}
+        background_position_x={background_position_x}
+        background_position_y={background_position_y}
       />
       <h1>
         {title.split('\n').map((line, i) => (
