@@ -2,6 +2,7 @@ import * as Styled from './TitleSection.styled'
 
 export type TitleSectionProps = {
   title: string
+  align: string
   tel: string
   tel_label: string
   background: {
@@ -13,6 +14,7 @@ export type TitleSectionProps = {
 
 export const TitleSection = ({
   title,
+  align,
   tel,
   tel_label,
   background,
@@ -27,11 +29,11 @@ export const TitleSection = ({
           backgroundImage: background.url
             ? `url('${background.url}')`
             : 'none',
-          backgroundPositionX: `${background_position_x}`,
+          backgroundPositionX: background_position_x,
           backgroundPositionY: background_position_y,
         }}
       />
-      <h1>
+      <h1 style={{ textAlign: align }}>
         {title.split('\n').map((line, i) => (
           <Styled.Title key={i}>
             {line}

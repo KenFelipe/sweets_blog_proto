@@ -10,6 +10,7 @@ export default {
     title: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       Eius, sed quos! Repellendus cum placeat perferendis nostrum, ipsam laboriosam molestiae.
       Est assumenda quia minima temporibus veniam fugit hic autem accusantium repellat.`,
+    align: 'right',
     tel: '(11) 1234-56789',
     tel_label: 'TelLabel: ',
     background: '',

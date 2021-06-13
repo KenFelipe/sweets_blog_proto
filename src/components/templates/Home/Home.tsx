@@ -35,6 +35,7 @@ export const Home = ({
     <Styled.Home>
       <TitleSection
         title={titleData.title}
+        align={titleData.align}
         tel={titleData.tel}
         tel_label={titleData.tel_label}
         background={titleData.background}

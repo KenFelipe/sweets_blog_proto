@@ -20,7 +20,6 @@ export const TitleSection = styled.div`
 
     display: block;
     width: 100%;
-    text-align: right;
 
     margin: 0 auto;
     padding: 102px 16px 128px;

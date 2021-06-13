@@ -8,6 +8,7 @@ export const fetchHomeData = async () => {
         query FetchSweets {
           title {
             title
+            align
             tel_label
             tel
             background {
