@@ -56,7 +56,7 @@ export const TitleSection = ({
           <span>{tel_label}&nbsp;</span>
           <br />
           <a
-            href={`https://web.whatsapp.com/send?phone=55${tel.replace(
+            href={`https://api.whatsapp.com/send?phone=55${tel.replace(
               /[^0-9]/g,
               '',
             )}`}
