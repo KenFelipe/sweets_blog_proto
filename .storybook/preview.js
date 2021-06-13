@@ -1,5 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { theme } from '../src/styles/theme'
+import { GlobalStyle } from '../src/styles/global'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -19,8 +20,8 @@ export const parameters = {
     storySort: {
       order: [
         'Atoms',
-        'Organisms',
         'Molecules',
+        'Organisms',
         'Templates',
         'Pages',
       ],
@@ -32,6 +33,7 @@ export const decorators = [
   Story => (
     <ThemeProvider theme={theme}>
       <Story />
+      <GlobalStyle />
     </ThemeProvider>
   ),
 ];

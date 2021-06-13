@@ -1,21 +1,60 @@
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
 
-import { Text } from '@/atoms/Text/Text'
+import { fetchHomeData } from '@/api/fetchHomeData'
+import { Home, MainDataProps } from '@/templates/Home/Home'
+import { TitleSectionProps } from '@/organisms/TitleSection/TitleSection'
+import { CategoriesProps } from '@/organisms/SweetsList/SweetsList'
+import { LicencesProps } from '@/organisms/Footer/Footer'
 
-const HomePage = () => {
+export type IndexProps = {
+  data: {
+    meta: {
+      site_name: string
+    }
+    title: TitleSectionProps
+    main: MainDataProps
+    licences: LicencesProps
+    categories: CategoriesProps
+  }
+}
+
+export default function Index({ data }: IndexProps) {
   return (
-    <div>
+    <>
       <Head>
-        <title>Next Plugin Boilerplate</title>
+        <title>{data.meta.site_name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Next.js</h1>
-        <Text>TextComponent</Text>
-      </main>
-    </div>
+      <Home
+        titleData={data.title}
+        mainData={data.main}
+        categories={data.categories}
+        footerData={data.licences}
+      />
+    </>
   )
 }
 
-export default HomePage
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+  let dataFetched = null
+
+  try {
+    dataFetched = await fetchHomeData()
+  } catch (e) {
+    console.error(e)
+  }
+
+  if (!dataFetched) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: {
+      data: dataFetched.data,
+    },
+  }
+}
